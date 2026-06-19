@@ -1,0 +1,20 @@
+{
+  "name": "Just Did It Fitness Tracker v6.3 Metric Fixed",
+  "short_name": "Just Did It",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#eef8ff",
+  "theme_color": "#0076B6",
+  "icons": [
+    {
+      "src": "app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
