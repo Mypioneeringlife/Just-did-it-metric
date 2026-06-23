@@ -4,597 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0076B6" />
-  <title>Just Did It Fitness Tracker v7 Strength</title>
+  <title>Just Did It</title>
   <style>
-    :root{
-      --brand:#0076B6;
-      --brand-dark:#005f92;
-      --bg:#eef8ff;
-      --card:#ffffff;
-      --ink:#17212b;
-      --muted:#667789;
-      --line:#d8e7f1;
-      --soft:#f6fbff;
-      --danger:#b00020;
-      --good:#217a39;
-      --shadow:0 10px 24px rgba(0, 79, 122, .12);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:var(--ink)}
-    .app{max-width:920px;margin:0 auto;padding:14px 14px 80px}
-    header{display:flex;gap:14px;align-items:center;padding:14px 4px 10px}
-    .logo{
-      width:76px;height:76px;border-radius:50%;
-      background:radial-gradient(circle at 30% 25%,#ffb05d,#f47d20 55%,#bd4c0f);
-      display:grid;place-items:center;color:white;font-weight:900;font-size:18px;
-      box-shadow:var(--shadow);border:3px solid white;
-    }
-    h1{margin:0;font-size:2rem;line-height:1}
-    header p{margin:.35rem 0 0;color:var(--muted)}
-    .tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;position:sticky;top:0;background:rgba(238,248,255,.92);backdrop-filter:blur(8px);padding:8px 0;z-index:2}
-    .tab{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 8px;font-weight:700;color:var(--brand-dark)}
-    .tab.active{background:var(--brand);color:white;border-color:var(--brand)}
-    .screen{display:none}
-    .screen.active{display:block}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
-    @media(min-width:720px){.span-3{grid-column:span 3}.span-4{grid-column:span 4}.span-6{grid-column:span 6}.span-8{grid-column:span 8}}
-    .metric-label{color:var(--muted);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
-    .metric{font-size:2rem;font-weight:900;margin:.2rem 0;color:var(--brand-dark)}
-    .metric-sub{color:var(--muted);font-size:.9rem}
-    h2{margin:.2rem 0 .75rem}
-    h3{margin:0 0 .6rem}
-    label{font-size:.85rem;font-weight:800;color:var(--muted);display:block;margin:10px 0 4px}
-    input,select,textarea{
-      width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;
-      font:inherit;background:white;color:var(--ink)
-    }
-    textarea{min-height:72px;resize:vertical}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-    .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    button,.btn{
-      border:0;border-radius:14px;background:var(--brand);color:white;font-weight:900;
-      padding:11px 14px;font:inherit;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px
-    }
-    button.secondary,.btn.secondary{background:#e5f3fb;color:var(--brand-dark);border:1px solid var(--line)}
-    button.danger{background:var(--danger)}
-    button.good{background:var(--good)}
-    .pill{display:inline-flex;background:#eaf5fb;border:1px solid var(--line);color:var(--brand-dark);border-radius:999px;padding:6px 10px;font-size:.85rem;font-weight:800;margin:3px}
-    .list{display:grid;gap:10px}
-    .item{border:1px solid var(--line);background:var(--soft);border-radius:16px;padding:12px}
-    .item-title{font-weight:900}
-    .muted{color:var(--muted)}
-    .set-line{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr auto;gap:8px;align-items:end;margin:8px 0}
-    @media(max-width:640px){
-      .set-line{grid-template-columns:1fr 1fr;gap:8px;background:var(--soft);padding:10px;border-radius:14px;border:1px solid var(--line)}
-      .set-line .wide{grid-column:span 2}
-    }
-    .tiny{font-size:.82rem;color:var(--muted)}
-    .footer-note{margin-top:10px;color:var(--muted);font-size:.9rem}
-    .summary-box{background:#eaf7ff;border:1px solid #b9dff4;border-radius:16px;padding:12px;margin-top:10px}
-    .danger-text{color:var(--danger);font-weight:800}
-    .hidden{display:none}
+    :root{--blue:#0076B6;--blue2:#005f92;--bg:#eef8ff;--card:#fff;--ink:#13202b;--muted:#637789;--line:#d7e7f0;--soft:#f6fbff;--orange:#f47d20;--danger:#b00020;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:var(--ink)}.app{max-width:720px;margin:0 auto;padding:16px 14px 70px}
+    .top{display:flex;align-items:center;gap:14px;margin:6px 0 16px}.brandmark{width:88px;text-align:center;flex:0 0 auto}.ball{width:76px;height:76px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ffb45d,var(--orange) 55%,#b74712);border:4px solid #fff;box-shadow:0 8px 20px #005f9230;position:relative;overflow:hidden}.ball:before{content:"";position:absolute;inset:12px;border:2px solid #65310d55;border-radius:45% 50% 55% 45%;transform:rotate(-25deg)}.ball:after{content:"× ×";position:absolute;right:12px;bottom:17px;color:white;font-weight:900;font-size:13px;letter-spacing:-2px}.logoText{font-weight:900;font-style:italic;color:var(--blue2);font-size:15px;margin-top:2px;line-height:1}
+    h1{margin:0;font-size:2rem;line-height:1}h2{margin:.2rem 0 .8rem}h3{margin:1rem 0 .25rem}.sub{color:var(--muted);margin:.25rem 0 0}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;margin:12px 0;box-shadow:0 8px 22px #005f9218}.quiet{box-shadow:none;background:var(--soft)}
+    .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:sticky;top:0;z-index:2;background:#eef8fff0;padding:8px 0}.tab{border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--blue2);font-weight:900;padding:11px}.tab.active{background:var(--blue);color:white;border-color:var(--blue)}.screen{display:none}.screen.active{display:block}
+    label{display:block;font-size:.85rem;font-weight:900;color:var(--muted);margin:12px 0 5px}input,select{width:100%;font:inherit;border:1px solid var(--line);border-radius:15px;padding:12px;background:#fff;color:var(--ink)}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button,.btn{border:0;border-radius:16px;background:var(--blue);color:white;font:inherit;font-weight:900;padding:12px 14px}button.secondary,.btn.secondary{background:#e7f3fa;color:var(--blue2);border:1px solid var(--line)}button.danger{background:var(--danger)}
+    .set{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:10px;margin:9px 0}.set button{padding:11px 12px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{background:#eaf7ff;border:1px solid #c5e4f5;border-radius:17px;padding:12px}.metric b{display:block;font-size:1.35rem;color:var(--blue2)}.metric span{font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase}.item{border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:12px;margin:8px 0}.itemTitle{font-weight:900}.muted{color:var(--muted)}.tiny{font-size:.85rem;color:var(--muted)}.hidden{display:none}.empty{padding:14px;color:var(--muted);text-align:center;border:1px dashed var(--line);border-radius:16px;background:#fff}
+    @media(max-width:520px){.top{align-items:flex-start}.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.set{grid-template-columns:1fr 1fr}.set button{grid-column:1/3}.brandmark{width:76px}.ball{width:66px;height:66px}.logoText{font-size:13px}}
   </style>
 </head>
 <body>
 <div class="app">
-  <header>
-    <div class="logo">JDI</div>
-    <div>
-      <h1>Just Did It</h1>
-      <p>v7 Strength Tracking. Bodyweight, dumbbells, machines, sets, reps, and total workout volume.</p>
-    </div>
+  <header class="top">
+    <div class="brandmark"><div class="ball"></div><div class="logoText">Just Did It</div></div>
+    <div><h1>Just Did It</h1><p class="sub">Track one exercise, save it, move to the next.</p></div>
   </header>
 
-  <nav class="tabs" aria-label="Main sections">
-    <button class="tab active" data-tab="today">Today</button>
-    <button class="tab" data-tab="workout">Workout</button>
-    <button class="tab" data-tab="exercises">Exercises</button>
-    <button class="tab" data-tab="progress">Progress</button>
-    <button class="tab" data-tab="more">More</button>
+  <nav class="tabs">
+    <button class="tab active" data-tab="log">Log</button>
+    <button class="tab" data-tab="today">Today</button>
+    <button class="tab" data-tab="history">History</button>
   </nav>
 
-  <main>
-    <section id="today" class="screen active">
-      <div class="grid">
-        <article class="card span-3"><div class="metric-label">Today’s reps</div><div id="todayReps" class="metric">0</div><div class="metric-sub">All logged reps today</div></article>
-        <article class="card span-3"><div class="metric-label">Today’s volume</div><div id="todayVolume" class="metric">0 kg</div><div class="metric-sub">Sets × reps × weight</div></article>
-        <article class="card span-3"><div class="metric-label">This week</div><div id="weekVolume" class="metric">0 kg</div><div class="metric-sub">Total lifted volume</div></article>
-        <article class="card span-3"><div class="metric-label">Workouts</div><div id="weekWorkouts" class="metric">0</div><div class="metric-sub">Saved this week</div></article>
-
-        <article class="card span-8">
-          <h2>Quick log</h2>
-          <p class="muted">Fast entry for common work. Weight can stay at 0 for bodyweight exercises, or you can add dumbbells, machines, barbell weight, kettlebells, or weighted vest work.</p>
-          <div class="row">
-            <div><label>Exercise</label><select id="quickExercise"></select></div>
-            <div><label>Workout name</label><input id="quickWorkoutName" value="Quick workout" /></div>
-          </div>
-          <div class="row3">
-            <div><label>Sets</label><input id="quickSets" type="number" inputmode="numeric" min="1" value="3" /></div>
-            <div><label>Reps</label><input id="quickReps" type="number" inputmode="numeric" min="1" value="10" /></div>
-            <div><label>Weight per rep, kg</label><input id="quickWeight" type="number" inputmode="decimal" min="0" step="0.5" value="0" /></div>
-          </div>
-          <div class="summary-box">
-            <strong>Quick total:</strong> <span id="quickTotal">30 reps • 0 kg volume</span>
-          </div>
-          <div class="btns">
-            <button id="saveQuick">Save quick workout</button>
-            <button class="secondary" id="goWorkout">Build full workout</button>
-          </div>
-        </article>
-
-        <article class="card span-4">
-          <h2>Coach note</h2>
-          <div id="coachNote" class="muted">Log a workout and this will summarize what you did.</div>
-        </article>
-
-        <article class="card">
-          <h2>Recent workouts</h2>
-          <div id="recentWorkouts" class="list"></div>
-        </article>
+  <section id="log" class="screen active">
+    <div class="card">
+      <h2>Current exercise</h2>
+      <label>Exercise</label>
+      <input id="exercise" list="exerciseList" placeholder="Bench press, curls, squats..." autocomplete="off" />
+      <datalist id="exerciseList"></datalist>
+      <div class="row">
+        <div><label>Date</label><input id="date" type="date" /></div>
+        <div><label>Unit</label><select id="unit"><option value="kg">kg</option><option value="lb">lb</option></select></div>
       </div>
-    </section>
+      <h3>Sets for this exercise</h3>
+      <div id="sets"></div>
+      <div class="btns"><button class="secondary" id="addSet">Add set</button><button id="saveExercise">Save exercise</button></div>
+      <div class="card quiet"><div class="summary"><div class="metric"><span>Sets</span><b id="sumSets">0</b></div><div class="metric"><span>Reps</span><b id="sumReps">0</b></div><div class="metric"><span>Volume</span><b id="sumVolume">0 kg</b></div></div></div>
+    </div>
+  </section>
 
-    <section id="workout" class="screen">
-      <div class="card">
-        <h2>Build a full workout</h2>
-        <div class="row">
-          <div><label>Workout name</label><input id="workoutName" value="Strength workout" /></div>
-          <div><label>Date</label><input id="workoutDate" type="date" /></div>
-        </div>
-        <label>Notes</label><textarea id="workoutNotes" placeholder="How it felt, soreness, energy, form notes..."></textarea>
+  <section id="today" class="screen">
+    <div class="card"><h2>Today</h2><div class="summary"><div class="metric"><span>Exercises</span><b id="todayExercises">0</b></div><div class="metric"><span>Sets</span><b id="todaySets">0</b></div><div class="metric"><span>Volume</span><b id="todayVolume">0 kg</b></div></div><div id="todayList"></div></div>
+  </section>
 
-        <h3 style="margin-top:16px">Sets</h3>
-        <div id="setsList"></div>
-        <div class="btns">
-          <button class="secondary" id="addSet">Add set</button>
-          <button id="saveWorkout">Save workout</button>
-          <button class="secondary" id="clearDraft">Clear draft</button>
-        </div>
-
-        <div class="summary-box">
-          <div><strong>Workout total:</strong> <span id="draftSummary">0 sets • 0 reps • 0 kg volume</span></div>
-          <div class="tiny">Volume is calculated as sets × reps × weight. Bodyweight-only work still counts reps, but adds 0 kg unless you enter added weight.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="exercises" class="screen">
-      <div class="grid">
-        <article class="card span-6">
-          <h2>Add exercise</h2>
-          <label>Exercise name</label><input id="newExerciseName" placeholder="Example: Dumbbell row" />
-          <div class="row">
-            <div><label>Category</label><select id="newExerciseCategory">
-              <option>Strength</option><option>Bodyweight</option><option>Cardio</option><option>Mobility</option><option>Core</option>
-            </select></div>
-            <div><label>Default weight, kg</label><input id="newExerciseWeight" type="number" min="0" step="0.5" value="0" /></div>
-          </div>
-          <div class="btns"><button id="addExercise">Add exercise</button></div>
-        </article>
-
-        <article class="card span-6">
-          <h2>Exercise library</h2>
-          <div id="exerciseLibrary" class="list"></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="progress" class="screen">
-      <div class="grid">
-        <article class="card span-4"><div class="metric-label">Lifetime reps</div><div id="lifeReps" class="metric">0</div></article>
-        <article class="card span-4"><div class="metric-label">Lifetime volume</div><div id="lifeVolume" class="metric">0 kg</div></article>
-        <article class="card span-4"><div class="metric-label">Best volume workout</div><div id="bestWorkout" class="metric">0 kg</div></article>
-        <article class="card">
-          <h2>Exercise totals</h2>
-          <div id="exerciseTotals" class="list"></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="more" class="screen">
-      <div class="grid">
-        <article class="card span-6">
-          <h2>Backup</h2>
-          <p class="muted">Export your data before replacing an older version. Import restores workouts and exercises into this v7 structure.</p>
-          <div class="btns">
-            <button id="exportJson">Export JSON backup</button>
-            <label class="btn secondary" for="importJson">Import JSON</label>
-            <input id="importJson" type="file" accept="application/json,.json" class="hidden" />
-          </div>
-          <div id="backupStatus" class="footer-note"></div>
-        </article>
-        <article class="card span-6">
-          <h2>About v7</h2>
-          <p>This build adds:</p>
-          <span class="pill">Additional exercises</span>
-          <span class="pill">Sets</span>
-          <span class="pill">Reps</span>
-          <span class="pill">Weight</span>
-          <span class="pill">Workout volume</span>
-          <span class="pill">Exercise totals</span>
-          <p class="footer-note">Keep the simple rule: open it, log the work, close it.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+  <section id="history" class="screen">
+    <div class="card"><h2>History</h2><div id="historyList"></div></div>
+    <div class="card quiet"><h2>Backup</h2><p class="muted">Export before replacing versions. Import restores saved exercise logs.</p><div class="btns"><button id="exportData">Export</button><label class="btn secondary" for="importData">Import</label><input id="importData" class="hidden" type="file" accept="application/json,.json" /></div><p id="status" class="tiny"></p></div>
+  </section>
 </div>
 
 <script>
-const STORAGE_KEY = "just_did_it_v7_strength";
-const LEGACY_KEYS = ["just_did_it_v6_4","just_did_it_v6_3","just_did_it_v6_2","just_did_it_v6_1","just_did_it_v5","just_did_it"];
-
-const defaultExercises = [
-  {id:"pushups", name:"Push-ups", category:"Bodyweight", defaultWeight:0},
-  {id:"squats", name:"Bodyweight squats", category:"Bodyweight", defaultWeight:0},
-  {id:"lunges", name:"Lunges", category:"Bodyweight", defaultWeight:0},
-  {id:"plank", name:"Plank", category:"Core", defaultWeight:0},
-  {id:"situps", name:"Sit-ups", category:"Core", defaultWeight:0},
-  {id:"dumbbell_curl", name:"Dumbbell curl", category:"Strength", defaultWeight:0},
-  {id:"dumbbell_row", name:"Dumbbell row", category:"Strength", defaultWeight:0},
-  {id:"dumbbell_press", name:"Dumbbell press", category:"Strength", defaultWeight:0},
-  {id:"goblet_squat", name:"Goblet squat", category:"Strength", defaultWeight:0},
-  {id:"deadlift", name:"Deadlift", category:"Strength", defaultWeight:0},
-  {id:"bench_press", name:"Bench press", category:"Strength", defaultWeight:0},
-  {id:"overhead_press", name:"Overhead press", category:"Strength", defaultWeight:0}
-];
-
-const seed = {
-  app:{name:"Just Did It Fitness Tracker", version:"7.0.0-strength", themeColor:"#0076B6"},
-  exercises: defaultExercises,
-  workouts: [],
-  draftSets: []
-};
-
-let state = loadState();
-
-function uid(prefix="id"){ return prefix + "_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,8); }
-function copy(obj){ return JSON.parse(JSON.stringify(obj)); }
-function todayISO(){ return new Date().toISOString().slice(0,10); }
-function money(n){ return Math.round(Number(n)||0).toLocaleString() + " kg"; }
-function num(n){ return Number(n)||0; }
-function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); render(); }
-
-function loadState(){
-  let raw = localStorage.getItem(STORAGE_KEY);
-  if(!raw){
-    for(const key of LEGACY_KEYS){ raw = localStorage.getItem(key); if(raw) break; }
-  }
-  if(!raw) return copy(seed);
-  try{
-    const parsed = JSON.parse(raw);
-    const migrated = {
-      ...copy(seed),
-      ...parsed,
-      app:{...seed.app, ...(parsed.app||{}), version:"7.0.0-strength"},
-      exercises: mergeExercises(parsed.exercises || []),
-      workouts: Array.isArray(parsed.workouts) ? parsed.workouts.map(normalizeWorkout) : [],
-      draftSets: Array.isArray(parsed.draftSets) ? parsed.draftSets.map(normalizeSet) : []
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
-    return migrated;
-  }catch(e){
-    console.error(e);
-    return copy(seed);
-  }
-}
-
-function mergeExercises(existing){
-  const map = new Map(defaultExercises.map(e=>[e.id,e]));
-  existing.forEach(e=>{
-    if(!e) return;
-    const id = e.id || slug(e.name || "exercise");
-    map.set(id, {
-      id,
-      name:e.name || "Exercise",
-      category:e.category || "Strength",
-      defaultWeight:num(e.defaultWeight ?? e.weight ?? 0)
-    });
-  });
-  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name));
-}
-
-function slug(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"") || uid("exercise"); }
-
-function normalizeSet(s){
-  const exerciseId = s.exerciseId || s.id || "pushups";
-  const ex = findExercise(exerciseId) || state?.exercises?.[0] || defaultExercises[0];
-  const sets = Math.max(1, num(s.sets || 1));
-  const reps = Math.max(0, num(s.reps || s.count || 0));
-  const weight = Math.max(0, num(s.weight ?? s.weightKg ?? s.addedWeight ?? 0));
-  return {id:s.id || uid("set"), exerciseId:ex.id, exerciseName:s.exerciseName || ex.name, sets, reps, weight, notes:s.notes || ""};
-}
-
-function normalizeWorkout(w){
-  if(Array.isArray(w.sets)){
-    const sets = w.sets.map(normalizeSet);
-    return {
-      id:w.id || uid("workout"),
-      date:(w.date || w.createdAt || new Date().toISOString()).slice(0,10),
-      name:w.name || w.title || "Workout",
-      notes:w.notes || "",
-      sets,
-      createdAt:w.createdAt || new Date().toISOString()
-    };
-  }
-  const reps = num(w.reps || w.totalReps || w.count || 0);
-  const exerciseId = w.exerciseId || "pushups";
-  const ex = findExercise(exerciseId) || defaultExercises[0];
-  return {
-    id:w.id || uid("workout"),
-    date:(w.date || w.createdAt || new Date().toISOString()).slice(0,10),
-    name:w.name || "Migrated workout",
-    notes:w.notes || "",
-    sets:[{id:uid("set"), exerciseId:ex.id, exerciseName:ex.name, sets:1, reps, weight:0, notes:"Migrated from older rep-only workout"}],
-    createdAt:w.createdAt || new Date().toISOString()
-  };
-}
-
-function findExercise(id){ return (state?.exercises || defaultExercises).find(e=>e.id===id); }
-function setVolume(s){ return num(s.sets)*num(s.reps)*num(s.weight); }
-function setReps(s){ return num(s.sets)*num(s.reps); }
-function workoutVolume(w){ return (w.sets||[]).reduce((sum,s)=>sum+setVolume(s),0); }
-function workoutReps(w){ return (w.sets||[]).reduce((sum,s)=>sum+setReps(s),0); }
-function workoutSets(w){ return (w.sets||[]).reduce((sum,s)=>sum+num(s.sets),0); }
-function isThisWeek(dateStr){
-  const d = new Date(dateStr + "T12:00:00");
-  const now = new Date();
-  const day = (now.getDay()+6)%7;
-  const monday = new Date(now); monday.setDate(now.getDate()-day); monday.setHours(0,0,0,0);
-  return d >= monday;
-}
-
-function switchTab(id){
-  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===id));
-  document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active", s.id===id));
-  render();
-}
-
-document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
-
-function refreshExerciseSelects(){
-  const selects = [document.getElementById("quickExercise")];
-  document.querySelectorAll(".setExercise").forEach(s=>selects.push(s));
-  selects.forEach(sel=>{
-    const current = sel.value;
-    sel.innerHTML = state.exercises.map(e=>`<option value="${e.id}">${escapeHtml(e.name)}</option>`).join("");
-    if(current) sel.value = current;
-  });
-}
-
-function render(){
-  refreshExerciseSelects();
-  renderTotals();
-  renderRecent();
-  renderDraft();
-  renderExerciseLibrary();
-  renderProgress();
-  updateQuickTotal();
-}
-
-function renderTotals(){
-  const today = todayISO();
-  const todayWorkouts = state.workouts.filter(w=>w.date===today);
-  const weekWorkouts = state.workouts.filter(w=>isThisWeek(w.date));
-  document.getElementById("todayReps").textContent = todayWorkouts.reduce((s,w)=>s+workoutReps(w),0).toLocaleString();
-  document.getElementById("todayVolume").textContent = money(todayWorkouts.reduce((s,w)=>s+workoutVolume(w),0));
-  document.getElementById("weekVolume").textContent = money(weekWorkouts.reduce((s,w)=>s+workoutVolume(w),0));
-  document.getElementById("weekWorkouts").textContent = weekWorkouts.length.toLocaleString();
-
-  const latest = state.workouts[0];
-  document.getElementById("coachNote").innerHTML = latest
-    ? `Last workout: <strong>${escapeHtml(latest.name)}</strong>. ${workoutSets(latest)} sets, ${workoutReps(latest).toLocaleString()} reps, ${money(workoutVolume(latest))} total volume.`
-    : "Log a workout and this will summarize what you did.";
-}
-
-function renderRecent(){
-  const box = document.getElementById("recentWorkouts");
-  const recent = [...state.workouts].sort((a,b)=>(b.createdAt||b.date).localeCompare(a.createdAt||a.date)).slice(0,8);
-  if(!recent.length){ box.innerHTML = `<div class="item muted">No workouts yet.</div>`; return; }
-  box.innerHTML = recent.map(w=>`
-    <div class="item">
-      <div class="item-title">${escapeHtml(w.name)} <span class="muted">• ${w.date}</span></div>
-      <div>${workoutSets(w)} sets • ${workoutReps(w).toLocaleString()} reps • ${money(workoutVolume(w))}</div>
-      <div class="tiny">${(w.sets||[]).map(s=>`${escapeHtml(s.exerciseName)}: ${s.sets}×${s.reps}${s.weight?` @ ${s.weight} kg`:``}`).join(" | ")}</div>
-      ${w.notes ? `<div class="tiny">Notes: ${escapeHtml(w.notes)}</div>` : ""}
-      <div class="btns"><button class="secondary" onclick="deleteWorkout('${w.id}')">Delete</button></div>
-    </div>
-  `).join("");
-}
-
-function renderDraft(){
-  const list = document.getElementById("setsList");
-  if(!state.draftSets.length) state.draftSets = [normalizeSet({exerciseId:state.exercises[0].id, sets:3, reps:10, weight:0})];
-  list.innerHTML = state.draftSets.map((s,i)=>`
-    <div class="set-line" data-index="${i}">
-      <div class="wide"><label>Exercise</label><select class="setExercise" onchange="updateDraft(${i},'exerciseId',this.value)"></select></div>
-      <div><label>Sets</label><input type="number" min="1" inputmode="numeric" value="${s.sets}" onchange="updateDraft(${i},'sets',this.value)" /></div>
-      <div><label>Reps</label><input type="number" min="0" inputmode="numeric" value="${s.reps}" onchange="updateDraft(${i},'reps',this.value)" /></div>
-      <div><label>Weight kg</label><input type="number" min="0" step="0.5" inputmode="decimal" value="${s.weight}" onchange="updateDraft(${i},'weight',this.value)" /></div>
-      <button class="secondary" onclick="removeSet(${i})">Remove</button>
-    </div>
-  `).join("");
-  refreshExerciseSelects();
-  document.querySelectorAll(".set-line").forEach(line=>{
-    const i = Number(line.dataset.index);
-    line.querySelector(".setExercise").value = state.draftSets[i].exerciseId;
-  });
-  const reps = state.draftSets.reduce((a,s)=>a+setReps(s),0);
-  const sets = state.draftSets.reduce((a,s)=>a+num(s.sets),0);
-  const volume = state.draftSets.reduce((a,s)=>a+setVolume(s),0);
-  document.getElementById("draftSummary").textContent = `${sets} sets • ${reps.toLocaleString()} reps • ${money(volume)} volume`;
-}
-
-function renderExerciseLibrary(){
-  const box = document.getElementById("exerciseLibrary");
-  box.innerHTML = state.exercises.map(e=>`
-    <div class="item">
-      <div class="item-title">${escapeHtml(e.name)}</div>
-      <div class="tiny">${escapeHtml(e.category)} • default ${num(e.defaultWeight)} kg</div>
-    </div>
-  `).join("");
-}
-
-function renderProgress(){
-  const totalReps = state.workouts.reduce((s,w)=>s+workoutReps(w),0);
-  const totalVolume = state.workouts.reduce((s,w)=>s+workoutVolume(w),0);
-  const best = state.workouts.reduce((max,w)=>Math.max(max, workoutVolume(w)),0);
-  document.getElementById("lifeReps").textContent = totalReps.toLocaleString();
-  document.getElementById("lifeVolume").textContent = money(totalVolume);
-  document.getElementById("bestWorkout").textContent = money(best);
-
-  const totals = {};
-  state.workouts.forEach(w=>(w.sets||[]).forEach(s=>{
-    const key = s.exerciseId;
-    if(!totals[key]) totals[key] = {name:s.exerciseName, reps:0, volume:0, sets:0};
-    totals[key].reps += setReps(s);
-    totals[key].volume += setVolume(s);
-    totals[key].sets += num(s.sets);
-  }));
-  const rows = Object.values(totals).sort((a,b)=>b.volume-a.volume || b.reps-a.reps);
-  document.getElementById("exerciseTotals").innerHTML = rows.length ? rows.map(t=>`
-    <div class="item"><div class="item-title">${escapeHtml(t.name)}</div><div>${t.sets} sets • ${t.reps.toLocaleString()} reps • ${money(t.volume)}</div></div>
-  `).join("") : `<div class="item muted">No exercise totals yet.</div>`;
-}
-
-function updateQuickTotal(){
-  const sets = num(document.getElementById("quickSets").value);
-  const reps = num(document.getElementById("quickReps").value);
-  const weight = num(document.getElementById("quickWeight").value);
-  document.getElementById("quickTotal").textContent = `${(sets*reps).toLocaleString()} reps • ${money(sets*reps*weight)} volume`;
-}
-["quickSets","quickReps","quickWeight"].forEach(id=>document.getElementById(id).addEventListener("input", updateQuickTotal));
-document.getElementById("quickExercise").addEventListener("change", e=>{
-  const ex = findExercise(e.target.value);
-  if(ex) document.getElementById("quickWeight").value = ex.defaultWeight || 0;
-  updateQuickTotal();
-});
-
-document.getElementById("saveQuick").addEventListener("click", ()=>{
-  const ex = findExercise(document.getElementById("quickExercise").value);
-  const workout = {
-    id:uid("workout"),
-    date:todayISO(),
-    name:document.getElementById("quickWorkoutName").value || "Quick workout",
-    notes:"",
-    sets:[{
-      id:uid("set"), exerciseId:ex.id, exerciseName:ex.name,
-      sets:Math.max(1,num(document.getElementById("quickSets").value)),
-      reps:Math.max(0,num(document.getElementById("quickReps").value)),
-      weight:Math.max(0,num(document.getElementById("quickWeight").value))
-    }],
-    createdAt:new Date().toISOString()
-  };
-  state.workouts.unshift(workout);
-  save();
-});
-
-document.getElementById("goWorkout").addEventListener("click", ()=>switchTab("workout"));
-document.getElementById("workoutDate").value = todayISO();
-
-document.getElementById("addSet").addEventListener("click", ()=>{
-  state.draftSets.push(normalizeSet({exerciseId:state.exercises[0].id, sets:3, reps:10, weight:0}));
-  save();
-});
-document.getElementById("clearDraft").addEventListener("click", ()=>{
-  state.draftSets = [normalizeSet({exerciseId:state.exercises[0].id, sets:3, reps:10, weight:0})];
-  save();
-});
-document.getElementById("saveWorkout").addEventListener("click", ()=>{
-  const cleaned = state.draftSets.map(normalizeSet).filter(s=>s.sets>0 && s.reps>=0);
-  if(!cleaned.length){ alert("Add at least one set first."); return; }
-  const workout = {
-    id:uid("workout"),
-    date:document.getElementById("workoutDate").value || todayISO(),
-    name:document.getElementById("workoutName").value || "Strength workout",
-    notes:document.getElementById("workoutNotes").value || "",
-    sets:cleaned,
-    createdAt:new Date().toISOString()
-  };
-  state.workouts.unshift(workout);
-  state.draftSets = [normalizeSet({exerciseId:state.exercises[0].id, sets:3, reps:10, weight:0})];
-  document.getElementById("workoutNotes").value = "";
-  save();
-  switchTab("today");
-});
-
-function updateDraft(i, field, value){
-  if(!state.draftSets[i]) return;
-  if(field==="exerciseId"){
-    const ex = findExercise(value);
-    state.draftSets[i].exerciseId = ex.id;
-    state.draftSets[i].exerciseName = ex.name;
-    if(num(state.draftSets[i].weight)===0 && ex.defaultWeight) state.draftSets[i].weight = ex.defaultWeight;
-  } else {
-    state.draftSets[i][field] = num(value);
-  }
-  save();
-}
-function removeSet(i){
-  state.draftSets.splice(i,1);
-  if(!state.draftSets.length) state.draftSets.push(normalizeSet({exerciseId:state.exercises[0].id, sets:3, reps:10, weight:0}));
-  save();
-}
-function deleteWorkout(id){
-  state.workouts = state.workouts.filter(w=>w.id!==id);
-  save();
-}
-
-document.getElementById("addExercise").addEventListener("click", ()=>{
-  const name = document.getElementById("newExerciseName").value.trim();
-  if(!name){ alert("Name the exercise first."); return; }
-  const id = slug(name);
-  if(state.exercises.some(e=>e.id===id)){ alert("That exercise already exists."); return; }
-  state.exercises.push({
-    id, name,
-    category:document.getElementById("newExerciseCategory").value,
-    defaultWeight:num(document.getElementById("newExerciseWeight").value)
-  });
-  document.getElementById("newExerciseName").value = "";
-  document.getElementById("newExerciseWeight").value = "0";
-  save();
-});
-
-document.getElementById("exportJson").addEventListener("click", ()=>{
-  const blob = new Blob([JSON.stringify(state,null,2)], {type:"application/json"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "just-did-it-v7-strength-backup.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-  document.getElementById("backupStatus").textContent = "Backup exported.";
-});
-document.getElementById("importJson").addEventListener("change", async (e)=>{
-  const file = e.target.files[0];
-  if(!file) return;
-  try{
-    const parsed = JSON.parse(await file.text());
-    state = {
-      ...copy(seed),
-      ...parsed,
-      app:{...seed.app, ...(parsed.app||{}), version:"7.0.0-strength"},
-      exercises:mergeExercises(parsed.exercises || []),
-      workouts:Array.isArray(parsed.workouts) ? parsed.workouts.map(normalizeWorkout) : [],
-      draftSets:Array.isArray(parsed.draftSets) ? parsed.draftSets.map(normalizeSet) : []
-    };
-    save();
-    document.getElementById("backupStatus").textContent = "Backup imported.";
-  }catch(err){
-    document.getElementById("backupStatus").innerHTML = `<span class="danger-text">Import failed.</span>`;
-  }
-});
-
-function escapeHtml(s){
-  return String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
-}
-
-window.updateDraft = updateDraft;
-window.removeSet = removeSet;
-window.deleteWorkout = deleteWorkout;
-
-render();
+const KEY="just_did_it_v8_exercise_flow";
+const LEGACY=["just_did_it_v7_strength","just_did_it_v6_4","just_did_it_v6_3","just_did_it_v5"];
+const starter=["Bench press","Squat","Deadlift","Overhead press","Dumbbell curl","Dumbbell row","Push-ups","Lunges","Plank","Goblet squat"];
+let state=load();
+const draft={sets:[{reps:10,weight:0}]};
+function id(){return "e_"+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function today(){return new Date().toISOString().slice(0,10)}
+function n(v){return Number(v)||0}
+function reps(sets){return sets.reduce((a,s)=>a+n(s.reps),0)}
+function volume(sets){return sets.reduce((a,s)=>a+n(s.reps)*n(s.weight),0)}
+function load(){let raw=localStorage.getItem(KEY);if(!raw){for(const k of LEGACY){raw=localStorage.getItem(k);if(raw)break}}try{const p=raw?JSON.parse(raw):{};return{logs:Array.isArray(p.logs)?p.logs:migrate(p.workouts||[]),exercises:Array.from(new Set([...(p.exercises||[]).map(e=>e.name||e),...starter])).sort(),unit:p.unit||"kg"}}catch{return{logs:[],exercises:starter,unit:"kg"}}}
+function migrate(workouts){const logs=[];(workouts||[]).forEach(w=>(w.sets||[]).forEach(s=>logs.push({id:id(),date:w.date||today(),exercise:s.exerciseName||"Exercise",unit:"kg",sets:Array.from({length:n(s.sets)||1},()=>({reps:n(s.reps),weight:n(s.weight)}))})));return logs}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+function money(v,u){return Math.round(n(v)).toLocaleString()+" "+u}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function renderSets(){const box=document.getElementById("sets");box.innerHTML=draft.sets.map((s,i)=>`<div class="set"><div><label>Reps</label><input type="number" min="0" inputmode="numeric" value="${s.reps}" oninput="editSet(${i},'reps',this.value)"></div><div><label>Weight</label><input type="number" min="0" step="0.5" inputmode="decimal" value="${s.weight}" oninput="editSet(${i},'weight',this.value)"></div><button class="secondary" onclick="removeSet(${i})">Remove</button></div>`).join("");const u=document.getElementById("unit").value;document.getElementById("sumSets").textContent=draft.sets.length;document.getElementById("sumReps").textContent=reps(draft.sets).toLocaleString();document.getElementById("sumVolume").textContent=money(volume(draft.sets),u)}
+function renderLists(){document.getElementById("exerciseList").innerHTML=state.exercises.map(e=>`<option value="${esc(e)}"></option>`).join("");const t=today();const todays=state.logs.filter(l=>l.date===t);document.getElementById("todayExercises").textContent=todays.length;document.getElementById("todaySets").textContent=todays.reduce((a,l)=>a+l.sets.length,0);document.getElementById("todayVolume").textContent=money(todays.reduce((a,l)=>a+volume(l.sets),0),state.unit);document.getElementById("todayList").innerHTML=todays.length?todays.map(renderLog).join(""):'<div class="empty">No exercises logged today.</div>';document.getElementById("historyList").innerHTML=state.logs.length?state.logs.slice(0,40).map(renderLog).join(""):'<div class="empty">No history yet.</div>'}
+function renderLog(l){return `<div class="item"><div class="itemTitle">${esc(l.exercise)} <span class="muted">• ${esc(l.date)}</span></div><div>${l.sets.length} sets • ${reps(l.sets).toLocaleString()} reps • ${money(volume(l.sets),l.unit||state.unit)}</div><div class="tiny">${l.sets.map((s,i)=>`Set ${i+1}: ${n(s.reps)} reps @ ${n(s.weight)} ${l.unit||state.unit}`).join(" | ")}</div><div class="btns"><button class="secondary" onclick="repeatLog('${l.id}')">Repeat</button><button class="danger" onclick="deleteLog('${l.id}')">Delete</button></div></div>`}
+function render(){renderSets();renderLists()}
+function editSet(i,k,v){draft.sets[i][k]=n(v);renderSets()}
+function removeSet(i){draft.sets.splice(i,1);if(!draft.sets.length)draft.sets.push({reps:10,weight:0});renderSets()}
+function repeatLog(logId){const l=state.logs.find(x=>x.id===logId);if(!l)return;document.getElementById("exercise").value=l.exercise;document.getElementById("unit").value=l.unit||state.unit;draft.sets=l.sets.map(s=>({...s}));document.querySelector('[data-tab="log"]').click();render()}
+function deleteLog(logId){state.logs=state.logs.filter(l=>l.id!==logId);save()}
+function switchTab(id){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id===id));render()}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
+document.getElementById("date").value=today();document.getElementById("unit").value=state.unit;document.getElementById("unit").onchange=()=>{state.unit=document.getElementById("unit").value;save()};document.getElementById("addSet").onclick=()=>{draft.sets.push({...draft.sets[draft.sets.length-1]});renderSets()};
+document.getElementById("saveExercise").onclick=()=>{const ex=document.getElementById("exercise").value.trim();if(!ex){alert("Enter the exercise first.");return}const unit=document.getElementById("unit").value;state.unit=unit;if(!state.exercises.includes(ex))state.exercises.push(ex);state.exercises.sort();state.logs.unshift({id:id(),date:document.getElementById("date").value||today(),exercise:ex,unit,sets:draft.sets.map(s=>({reps:n(s.reps),weight:n(s.weight)}))});draft.sets=[{reps:10,weight:0}];document.getElementById("exercise").value="";save();switchTab("today")};
+document.getElementById("exportData").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:"application/json"}));a.download="just-did-it-backup.json";a.click();URL.revokeObjectURL(a.href)};
+document.getElementById("importData").onchange=async e=>{try{const p=JSON.parse(await e.target.files[0].text());state={logs:p.logs||[],exercises:p.exercises||starter,unit:p.unit||"kg"};save();document.getElementById("status").textContent="Import complete."}catch{document.getElementById("status").textContent="Import failed."}};
+window.editSet=editSet;window.removeSet=removeSet;window.repeatLog=repeatLog;window.deleteLog=deleteLog;render();
 </script>
 </body>
 </html>
