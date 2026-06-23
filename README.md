@@ -1,17 +1,19 @@
-# Just Did It Fitness Tracker v6.3 Metric Fixed
+# Just Did It Fitness Tracker v7 Strength
 
-This fixes the v6.2 runtime bug that made quick buttons and the Progress tab stop working.
+This upgrade adds strength tracking on top of the simple Just Did It workflow.
 
-## Fixes
-- Removed the broken backup reference from the main Coach box
-- Added backup status only inside More
-- Kept backup off the bottom/main area
-- Kept metric measurements:
-  - kg for weight
-  - cm for height
-  - cm for waist
-  - kg for muscle/bone mass
-- Kept large logo and streamlined 5-tab layout
+## New in v7
+- Add additional exercises
+- Track sets and reps
+- Track weight per rep in kilograms
+- Automatically calculate total workout volume
+- Quick log for a single exercise
+- Full workout builder for multiple exercises
+- Daily, weekly, lifetime, and exercise-level totals
+- JSON backup/import
+- Local-first single-file HTML app
 
-## Core rule
-Open it, tap once, close it.
+## Workout volume formula
+sets × reps × weight = total lifted volume
+
+Bodyweight exercises still count reps. If you want added weight counted, enter the added weight in kg.
